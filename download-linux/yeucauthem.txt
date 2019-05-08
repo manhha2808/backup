@@ -1,0 +1,3 @@
+- SHELL SCRIPT:
++ Viết lại,  sử dụng hàm
++ Có thể sử dụng class hay không

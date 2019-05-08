@@ -1,0 +1,73 @@
+cú pháp khai báo file cấu hình docker-compose:
+
+1. Phiên bản của docker-compose:
+	version: '3.5'
+
+2. Liệt kê các services:
+	services:
+		mysql:
+			...
+			...
+		app:
+			...
+			...
+
+3. Cài đặt chung cho từng services
+
+mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - docker/database:/var/lib/mysql
+
+Giải thích:
+	image: chỉ định image để khởi động container, ở đây là một image có sẵn
+	container_name: Chỉ định tên container tùy chỉnh, thay vì tên mặc định
+	restart: Giá trị mặc định là no, còn nếu bạn đặt là always thì container sẽ khởi động lại nếu mã thoát cho biết lỗi không thành công.
+	environment: Thêm các biến môi trường.
+	volumes: Chia sẻ dữ liệu giữa container và host hoặc giữa các container với nhau.
+Ví dụ:
+	Khi container mysql tạo và lưu dữ liệu thì dữ liệu này sẽ lưu ở thư mục vả/lib/mysql của container. Như vậy nếu như container này bị xóa thì chúng ta sẽ mất toàn bộ data, vậy làm gì để khắc phục.
+	Giải pháp là sao lưu dữ liệu đó ra ngoài máy host, như vậy khi container bị xóa, dữ liệu sẽ vẫn được lưu trữ ở máy host. Và ở khi bật lại container, dữ liệu lại được mount từ máy host vào trong container và chúng ta tiếp tục sử dụng nó bình thường.
+	Thư mục lưu trữ data ở ngoài máy host sẽ không được commit vào git, ta đưa nó vào gitignore.
+		
+		# Ignore data backup
+		docker/database
+
+	Ở một số hướng dẫn có lưu dữ liệu backup vào trong thư mục mà framework đã gitignore sẵn, ví dụ như đối với Rails là /tmp hoặc lưu ở thư mục ngoài dự án thì không cần gitignore nó nữa.
+
+app:
+    container_name: app
+    build: .
+    volumes:
+      - .:/my_app
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE_USER_NAME: root
+      DATABASE_PASSWORD: root
+
+build: Sử dụng khi chúng ta không xây dựng container từ image có sẵn nữa mà xây dựng nó từ Dockerfile.
+nếu Dockerfile nằm cùng thư mục với docker-compose.yml thì chỉ cần:  build: .
+Nếu bạn muốn đặt Dockerfile trong thư mục docker để cùng với entrypoint.sh cho gọn thì sửa thành:
+
+
+build:
+       context: ./
+       dockerfile: docker/Dockerfile
+
+ports: Cấu hình cổng kết nối
+
+Có thể chỉ định cả 2 cổng (HOST:CONTAINER) tức là (cổng ở máy thật: cổng ở máy ảo) hoặc chỉ định mình cổng cho máy ảo thôi.
+
+Ví dụ: "2222:3333" Khi bạn truy cập vào cổng 2222 ở máy thật thì sẽ được trỏ tới truy cập ở cổng 3333 của máy ảo.
+
+environment: Bổ sung các biến môi trường.
+
+Lưu ý rằng DATABASE_HOST chính là tên của service mysql.
+
+Mình đã push code lên Github.

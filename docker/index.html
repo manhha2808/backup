@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docker Tutorial</title>
+</head>
+<body>
+    <h1>Docker là gì</h1>
+    <p>Docker là một dự án mã nguồn mở giúp tự động triển khai các ứng dụng Linux và Windows vào trong các container ảo hóa
+    là một open platform cung cấp cho người sử dụng những công cụ và service để người sử dụng có thể đóng gói và chạy chương trình của mình trên các môi trường khác nhau một cách nhanh nhất.</p>
+    <h1>Contener là gì </h1>
+    <p>Nó là một giải pháp để chuyển giao phần mềm một cách đáng tin cậy giữa các môi trường máy tính khác nhau bằng cách:</p>
+    <ul>
+        <li>Tạo ra một môi trường chứa mọi thứ mà phần mềm cần để có thể chạy được.</li>
+        <li>Không bị các yếu tố liên quan đến môi trường hệ thống làm ảnh hưởng tới.</li>
+        <li>Cũng như không làm ảnh hưởng tới các phần còn lại của hệ thống.</li>
+    </ul>
+    <h1>Docker images là gì </h1>
+    <p>Docker image là nền tảng của container , có thể hiểu Docker image như khung xương giúp định hình cho container, nó sẽ tạo ra container khi thực hiện câu lệnh chạy image đó. Nếu nói với phong cách lập trình hướng đối tượng , Docker image là class , còn container là thực thể (instance, thể hiện) của class đó.</p>
+    <h1>Dùng docker có gì tốt ?</h1>
+    <p>
+        <ul>
+    <li>Tính đồng nhất
+    <ul>
+    <li>Khi nhiều người cùng phát triển trong cùng một dự án sẽ không bị sự sai khác về mặt môi trường.</li>
+    </ul>
+    </li>
+    <li>Đóng gói
+    <ul>
+    <li>Có thể ẩn môi trường bao gồm cả app vào trong một gói được gọi là container.</li>
+    <li>Có thể test được các container.</li>
+    <li>Việc bỏ hay tạo lại container rất dễ dàng.</li>
+    </ul>
+    </li>
+    <li>Linh động (tính nhất quán)
+    <ul>
+    <li>Có thể test container được dùng để phát triển bằng CI.</li>
+    <li>Có thể deploy container đã được test bằng CI lên server.</li>
+    <li>Có thể scale container đã được deploy.</li>
+    </ul>
+    </li>
+    </ul>
+    </p>
+    <h1>Sự khác nhau vagrant  với  docker </h1>
+    <p>Máy ảo Vagrant cung cấp Kernel-based security separation. Việc tách biệt này làm cho các máy ảo ít gặp rủi ro về security hơn so với container. Nhưng các container Docker rất nhẹ. Chúng sử dụng ít tài nguyên hơn và thực thi nhanh hơn. Vì vậy, bạn có thể có nhiều hơn một container trên một máy chủ duy nhất so với các máy ảo. Ngoài ra, việc start và stop container là gần như tức thời so với máy ảo. Các máy ảo phải đi qua toàn bộ chu kỳ khởi động BIOS và Hệ điều hành.</p>
+    <p>Nhờ vào security separation của VM, khi có failure xảy ra thì không bị ảnh hưởng đến các phần khác. Còn đối với container, chúng chia sẻ các tài nguyên và có thể có hiệu ứng fail 1 cách dây chuyền. Ngoài ra, các mối đe dọa an ninh của container có thể chạm đến được cả kernel của hệ điều hành máy chủ.</p>
+    <p>Tuy nhiên, tốc độ thực thi và tính gọn nhẹ của container làm cho Docker rất hấp dẫn để phát triển. Với kiến trúc microservice, container có thể hoạt động tốt vì các yếu tố rủi ro được giảm thiểu thông qua việc sử dụng các microservices. Ngoài ra, những nổ lực nhằm cải tiến Docker bảo mật hơn càng ngày càng được đẩy mạnh.</p>
+    <h1>Docker-compose là gì </h1>
+    <p>là một công cụ tuyệt vời để định nghĩa và chạy nhiều container trên ứng dụng Docker. Nó cho phép bạn tạo 1 file cấu hình YAML, nơi mà bạn sẽ định nghĩa các services trên ứng dụng của bạn và định nghĩa tất cả các bước, các cấu hình cần thiết để xây dựng các image, up các container và liên kết chúng với nhau. Cuối cùng, một khi tất cả điều này được thực hiện, bạn sẽ chỉ cần thiết lập tất cả với một lệnh duy nhất.</p>
+    <h1>Ưu điểm docker compose </h1>
+    <p>May mắn thay, có cách tốt hơn để thực hiện việc này. Docker-compose là một công cụ tuyệt vời để định nghĩa và chạy nhiều container trên ứng dụng Docker. Nó cho phép bạn tạo 1 file cấu hình YAML, nơi mà bạn sẽ định nghĩa các services trên ứng dụng của bạn và định nghĩa tất cả các bước, các cấu hình cần thiết để xây dựng các image, up các container và liên kết chúng với nhau. Cuối cùng, một khi tất cả điều này được thực hiện, bạn sẽ chỉ cần thiết lập tất cả với một lệnh duy nhất.Như vậy Docker compose giúp ta tự động tải các image, thiết lập cấu hình tốt hơn rất nhiều so với docker. Nó sẽ cần một file cấu hình docker-compose.yml để chạy theo các image và cấu hình trong đó.</p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+</body>
+</html>

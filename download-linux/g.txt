@@ -1,0 +1,35 @@
+****lý thuyết  
+	-git  : hệ thống hỗ trợ quản lý code 
+	- quản lý phiên bản : hệ thống lưu trữ các thay đổi của một tập tin (file) hoặc tập hợp các tập tin theo thời gian, do đó nó giúp bạn có thể quay lại một phiên bản xác định nào đó sau này
+	- phiên bản phân tán :  Mỗi nơi lưu source sẽ đc gọi là repositories, không cần lưu trữ tập trung một nơi, mà mỗi thành viên trong team sẽ có một repository ở máy của riêng mình.
+	- phiên bản tập trung : giống như một hệ thống file server mà các client có thể download và upload file 
+	- lợi ích dùng git :
+		+An toàn hơn (vì mỗi bản copy của thành viên đều là full copy từ repository gốc, khi server bị down).
+		+Các thành viên vẫn có thể làm việc offline, họ vẫn có thể commit và update trên local của họ hoặc thậm chí với nhau mà không cần thông qua server.
+		+Khi server hoạt động trở lại, họ có thể cập nhật tất cả lên lại server.
+	- so sánh git vs svn :
+		+ ở git thì toàn bộ kho lưu trữ cục bộ trên máy nhà phát triển , có thể làm việc nhiều ngày trong tình trạng kết nối internet kém
+		+ hệ thống phiên bản phân tán , nên ai cũng có thể là  server 
+		+ ở svn chỉ có 1 server trung tâm 
+		+ ở svn chỉ cho phép kiểm tra các nhánh trong khi ở git thì có thể kiểm tra toàn bộ kho lưu trữ
+	- các lệnh cơ bản :
+		+ init($ git init) :  tạo Git trong một repository(kho)
+		+ remote : quản lý tập hợp các kho lưu trữ mà mình đang theo dõi (Nếu bạn sử dụng GitHub và bạn đẩy code lên một repo GitHub được lưu trữ online, thì khi đó bạn sử dụng REMOTE repo )
+		+ add($ git add ) : cập nhật tất cả các file mình đã thay đỏi (thêm, sửa xoa file)
+		+ commit($ git commit -m "Message") : đẩy thông tin thay đổi lên local respository
+		+ pull(git pull origin <branch) : lấy code về máy
+		+ push ($ git push origin <name_branch>) : đẩy code lên server 
+		+ branch : tạo nhánh (branch)
+		+ merger : gop code của mình và code nhanh gốc
+	- Conflict và cách xử lý : 
+		+ Conflict : là xung đột xảy ra khi merger branch 
+		+ cách xử lý :
+			+)mình sẽ chỉnh sửa trực tiếp file mà bị xung đột 
+			+)hoặc có thể sử dụng các lệnh sau :
+			git status : xác định file bị xung đột
+			git long --merger : lệnh này tạo ra 1 bản ghi với một danh sach các commit conflict giữa các nhánh hợp nhất 
+			git diff : tìm sự khách nhau giữa các trạng thái của 1 repository/files
+			git checkout : sử dụng để hoàn tác các thay đổi với tệp hoặc để thay đổi các nhánh 
+			git reset --mixed : sử dụng để hoạc tác các thay đôi với thư mục và phân vùng nào đó 
+ 
+		

@@ -1,0 +1,32 @@
+first:
+have LED backlit
+	E6440: +CPU M,Ram 4, -14inch,120 or 320, -no FHD: 6300-7200+(SSD)
+	E6540: +CPU M, +15.6inch, +led backlit,Ram 8Gb, +FHD: -8500->11000+(SSD)
+	HP450G3: =6200U, +Ram8, +15.6inch FHD : -9300
+	HP850G1: -i5 4300U, Ram 4, +15.6inch FHD: 7800
+	Hp850G1(i7): =4600U, +Ram 8, +SSD256, +15.6inch, -noFHD: -9000
+	HP850G2: -i5 5200U, Ram 4, +SSD256, +15.6inch, -noFHD: -8600
+	E5440: -i7 4600U, Ram 4,No SSD, -14inch , -noFHD: =6900+
+	E5550: -i5-5300U, Ram 4, +15,6, -noFHD(maybe): -8000->9000
+	Hp 840G1: --CPU U gen4, Ram 4, SSD<, -NoFHD,-14inch: 6600
+	Hp 840 G2: -CPU U gen 5, Ram 4, -14inch,-noFHD, SSD240: 7800
+
+NO LED BACKLIT:
+	Hp650G1 +4300M,Ram 4 -no backlit, -no FHD: 7000
+
+LOW Quality
+	E6530:-big,ugly,-no SSD , +CPU M -gen3, +15.6inchFHD -Ram 4: +6100
+	
+nomoney: HP1040
+
+I need:
+	Build: not plastic
+	CPU strong M or i7
+	FHD
+	15.6
+	Led backlit
+	Ram 8
+	SSD >128
+	have HDD
+	more cheap more fun :D
+

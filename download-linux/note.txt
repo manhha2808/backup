@@ -1,0 +1,6 @@
+giữa các hàm phải có khoảng trắng
+ten ham phải đồng bộ, có ý nghĩa
+tên biến phải có ý nghĩa
+hiểu cụ thể, công dụng của từng cái một
+Khai báo các biến ở trên đầu
+test ngày đầu tuần, giữa tuần, cuối tuần của tuần này, tuần trước, tuần sau
