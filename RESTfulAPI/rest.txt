@@ -1,0 +1,49 @@
+API là gì ?
+
+API (Application Programming Interface) là phương thức kết nối với các thư viện và ứng dụng khác. Nó chính là một phần mềm giao tiếp giữa chương trình với hệ điều hành được sử dụng bởi các ứng dụng khác nhau. API cung cấp khả năng truy xuất đến một tập các hàm thường dùng. 
+
+Resource là gì ?
+
+Quản lý resource (tài nguyên) là một phần quan trọng và chiếm phần lớn trong công việc phát triển website. Trong đó các resource của các website khác nhau có thể khác nhau. Việc quản lý resource của một website bao gồm 4 tác vụ chính:
+    • Tạo mới một resource (create)
+    • Lấy thông tin một resource (read)
+    • Cập nhật một resource (update)
+    • Xóa một resource (delete)
+Có rất nhiều cách để xây dựng một trang web thực hiện 4 tác vụ trên. Ví dụ với một trang blog chạy dưới tên miền là http://my-blog.xyz thì để xem nội dung một bài viết (post) với ID là 123 bạn có thể làm theo một trong các cách sau:
+
+    • Gửi một request tới URL http://my-blog.xyz/posts?id=123 với HTTP method là GET
+    • Gửi một request tới URL http://my-blog.xyz/posts/123 với HTTP method là GET
+    • Gửi một request tới URL http://my-blog.xyz/action=view_post&id=123 với HTTP method là GET
+    • Gửi một request tới URL http://my-blog.xyz/view_post&id=123 với HTTP method là GET
+    • Gửi một request tới URL http://my-blog.xyz/posts?id=123 với HTTP method là POST
+    • Gửi một request tới URL http://my-blog.xyz/posts/123 với HTTP method là POST
+    • ...
+Và sau một thời gian dài thì người ta đã thống nhất ra các tiêu chuẩn khác nhau để thực hiện việc quản lý resource. Các tiêu chuẩn này (hay còn được gọi là Web API hoặc HTTP API) quy định một cách thống nhất việc quản lý các resource của web. Và RESTful là một trong các web API được sử dụng phổ biến ngày nay.
+
+RESTful API là gì ?
+
+RESTful API là một tiêu chuẩn dùng trong việc thiết kế các API cho ứng dụng web để quản lý các resource. RESTful là một trong những kiểu thiết kế API được sử dụng phổ biến nhất hiện nay.
+
+Trọng tâm REST quy định sử dụng các HTTP method  (GET, POST, PUT, DELETE) và cách định dạng các URL cho ứng dụng web để quản lý resource. Ví dụ, với một trang blog quản lý các bài viết chúng ta có các URL đi với HTTP method như sau:
+
+    • URL tạo bài viết: http://my-blog.xyz/posts. Tương ứng với HTTP method là POST
+    • URL đọc bài viết với ID là 123: http://my-blog.xyz/posts/123. Tương ứng với HTTP method là GET.
+    • URL cập nhật bài viết với ID 123 là : http://my-blog.xyz/posts/123. Tương ứng với PUT
+    • URL xóa bài viết với ID 123 là : http://my-blog.xyz/posts/123. Tương ứng với DELETE.
+
+Với các ứng dụng web được thiết kế sử dụng RESTful, lập trình viên có thể dễ dàng biết được URL và HTTP method để quản lý một resource. Bạn cũng cần lưu ý bản thân RESTful không quy định logic code ứng dụng và RESTful cũng không giới hạn bởi ngôn ngữ lập trình ứng dụng. Bất kỳ ngôn ngữ lập trình (hoặc framework) nào cũng có thể áp dụng RESTful trong việc thiết kế API cho ứng dụng web.
+
+Một vấn đề mà nhiều bạn mới tìm hiểu về RESTful cũng thường cảm thấy bối rối đó là REST và RESTful khác nhau như thế nào. REST là viết tắt của cụm từ Representational State Transfer và các ứng dụng sử dụng kiểu thiết kế REST thì được gọi là RESTful (-ful là tiếp vị ngữ giống như beauty và beautiful). Tất nhiên bạn cũng có thể sử dụng thuật ngữ REST thay cho RESTful và ngược lại.
+
+JSON API là gì ?
+
+Viết API theo REST thì được gì ?
+
+5 ràng buộc của RESTful API:
+
+    • Sự nhất quán trong cả API
+    • Tồn tại không trạng thái (ví dụ, không có server-side session)
+    • Sử dụng HTTP status code khi cần thiết
+    • Sử dụng URL endpoint với logical hỉearchy
+    • Versioning trong URL chứ không phải trong HTTP header
+

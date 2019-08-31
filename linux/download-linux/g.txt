@@ -27,7 +27,7 @@
 			+)mình sẽ chỉnh sửa trực tiếp file mà bị xung đột 
 			+)hoặc có thể sử dụng các lệnh sau :
 			git status : xác định file bị xung đột
-			git long --merger : lệnh này tạo ra 1 bản ghi với một danh sach các commit conflict giữa các nhánh hợp nhất 
+			git long --merger : lệnh này tạo ra 1 bản ghi với một danh sach các commit conflict giữa các nh hợp nhất ánh
 			git diff : tìm sự khách nhau giữa các trạng thái của 1 repository/files
 			git checkout : sử dụng để hoàn tác các thay đổi với tệp hoặc để thay đổi các nhánh 
 			git reset --mixed : sử dụng để hoạc tác các thay đôi với thư mục và phân vùng nào đó 
